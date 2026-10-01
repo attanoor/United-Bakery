@@ -4,7 +4,10 @@ app_publisher = "hammad"
 app_description = "Easein"
 app_email = "hammadabbasi7474@gmail.com"
 app_license = "mit"
-
+# Include custom JS in POS
+# page_js = {
+#     "point-of-sale": "public/js/pos_custom.js"
+# }
 # Apps
 # ------------------
 
@@ -242,3 +245,6 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+override_whitelisted_methods = {
+    "erpnext.selling.page.point_of_sale.point_of_sale.get_items": "easein.api.pos.get_items"
+}
